@@ -6,12 +6,12 @@ h1, h2, h3, h4, h5, h6 {
 nav a {
   padding: .5em;
   text-align: center;
-  background: #888;
+  background: #00539F;
   color: #fff;
   text-decoration: none;
 }
 nav a.active {
-  background: #666;
+  background: #0095DD;
 }
 
 header h1 {
@@ -25,7 +25,7 @@ section {
 }
 
 header {
-  background: #666;
+  background: #00539F;
   color: #fff;
   padding: .5em;
 }

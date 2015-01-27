@@ -27,6 +27,7 @@ section {
 header {
   background: #666;
   color: #fff;
+  padding: .5em;
 }
 
 .card {

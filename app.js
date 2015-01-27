@@ -1,7 +1,3 @@
-window.addEventListener("load", function() {
-  console.log("Hello World!");
-});
-
 var App = {
   setMode: function(m, obj) {
     console.log('setting mode', m);
@@ -46,16 +42,6 @@ var App = {
   }
 }
 
-// Set up navigation
-document.querySelector('.nav').addEventListener('click', function (e) {
-  var target = e.target.getAttribute('data-target');
-  var i;
-  e.preventDefault();
-  if (target) {
-    App.setMode(target);
-  }
-});
-
 // Fetch gifs from Reddit
 function getGifs(done) {
   getJSON('http://www.reddit.com/r/perfectloops.json', function (error, data) {
@@ -76,6 +62,7 @@ function getGifs(done) {
   });
 }
 
+// Fetch and parse a JSON blob from a URL.
 function getJSON(url, done) {
   var xhr = new XMLHttpRequest();
   xhr.onload = function() {
@@ -103,5 +90,17 @@ function getJSON(url, done) {
   xhr.open('get', url);
   xhr.send();
 }
+
+
+// Set up navigation
+document.querySelector('.nav').addEventListener('click', function (e) {
+  var target = e.target.getAttribute('data-target');
+  var i;
+  e.preventDefault();
+  if (target) {
+    App.setMode(target);
+  }
+});
+
 
 App.setMode('home');

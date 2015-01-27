@@ -44,7 +44,7 @@ var App = {
 
 // Fetch gifs from Reddit
 function getGifs(done) {
-  getJSON('http://www.reddit.com/r/perfectloops.json', function (error, data) {
+  getJSON('http://www.reddit.com/r/gifs.json', function (error, data) {
     if (data) {
       var posts = data.data.children;
       done(null, posts.filter(function (post) {
@@ -54,7 +54,7 @@ function getGifs(done) {
           return false;
         }
       }).map(function (p) {
-        return post.data.url;
+        return p.data.url;
       }));
     } else {
       done('no posts', null);
@@ -104,3 +104,4 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 
 
 App.setMode('home');
+
